@@ -3,7 +3,6 @@
 
 class Entity
 {
-	// model rayib 
 public:
 
 public:
