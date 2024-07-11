@@ -1,31 +1,42 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.10.35027.167
-MinimumVisualStudioVersion = 10.0.40219.1
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SunglassesEngine", "SunglassesEngine\SunglassesEngine.vcxproj", "{0B6C5E67-BD80-45DE-A0E0-08D51C53FB0A}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SunglassesEditor", "SunglassesEditor\SunglassesEditor.vcxproj", "{54EB967D-40E4-B5CF-6916-9B54556E95DB}"
+	ProjectSection(ProjectDependencies) = postProject
+		{A3984A7E-8F91-69D0-B8C3-4E55A41B49DC} = {A3984A7E-8F91-69D0-B8C3-4E55A41B49DC}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SunglassesEngine", "SunglassesEngine\SunglassesEngine.vcxproj", "{A3984A7E-8F91-69D0-B8C3-4E55A41B49DC}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "raylib", "raylib-master\raylib.vcxproj", "{8898EA18-743A-15EF-5DF5-284349369C3F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
-		Debug|x86 = Debug|x86
+		Dist|x64 = Dist|x64
 		Release|x64 = Release|x64
-		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{0B6C5E67-BD80-45DE-A0E0-08D51C53FB0A}.Debug|x64.ActiveCfg = Debug|x64
-		{0B6C5E67-BD80-45DE-A0E0-08D51C53FB0A}.Debug|x64.Build.0 = Debug|x64
-		{0B6C5E67-BD80-45DE-A0E0-08D51C53FB0A}.Debug|x86.ActiveCfg = Debug|Win32
-		{0B6C5E67-BD80-45DE-A0E0-08D51C53FB0A}.Debug|x86.Build.0 = Debug|Win32
-		{0B6C5E67-BD80-45DE-A0E0-08D51C53FB0A}.Release|x64.ActiveCfg = Release|x64
-		{0B6C5E67-BD80-45DE-A0E0-08D51C53FB0A}.Release|x64.Build.0 = Release|x64
-		{0B6C5E67-BD80-45DE-A0E0-08D51C53FB0A}.Release|x86.ActiveCfg = Release|Win32
-		{0B6C5E67-BD80-45DE-A0E0-08D51C53FB0A}.Release|x86.Build.0 = Release|Win32
+		{54EB967D-40E4-B5CF-6916-9B54556E95DB}.Debug|x64.ActiveCfg = Debug|x64
+		{54EB967D-40E4-B5CF-6916-9B54556E95DB}.Debug|x64.Build.0 = Debug|x64
+		{54EB967D-40E4-B5CF-6916-9B54556E95DB}.Dist|x64.ActiveCfg = Dist|x64
+		{54EB967D-40E4-B5CF-6916-9B54556E95DB}.Dist|x64.Build.0 = Dist|x64
+		{54EB967D-40E4-B5CF-6916-9B54556E95DB}.Release|x64.ActiveCfg = Release|x64
+		{54EB967D-40E4-B5CF-6916-9B54556E95DB}.Release|x64.Build.0 = Release|x64
+		{A3984A7E-8F91-69D0-B8C3-4E55A41B49DC}.Debug|x64.ActiveCfg = Debug|x64
+		{A3984A7E-8F91-69D0-B8C3-4E55A41B49DC}.Debug|x64.Build.0 = Debug|x64
+		{A3984A7E-8F91-69D0-B8C3-4E55A41B49DC}.Dist|x64.ActiveCfg = Dist|x64
+		{A3984A7E-8F91-69D0-B8C3-4E55A41B49DC}.Dist|x64.Build.0 = Dist|x64
+		{A3984A7E-8F91-69D0-B8C3-4E55A41B49DC}.Release|x64.ActiveCfg = Release|x64
+		{A3984A7E-8F91-69D0-B8C3-4E55A41B49DC}.Release|x64.Build.0 = Release|x64
+		{8898EA18-743A-15EF-5DF5-284349369C3F}.Debug|x64.ActiveCfg = Debug|x64
+		{8898EA18-743A-15EF-5DF5-284349369C3F}.Debug|x64.Build.0 = Debug|x64
+		{8898EA18-743A-15EF-5DF5-284349369C3F}.Dist|x64.ActiveCfg = Dist|x64
+		{8898EA18-743A-15EF-5DF5-284349369C3F}.Dist|x64.Build.0 = Dist|x64
+		{8898EA18-743A-15EF-5DF5-284349369C3F}.Release|x64.ActiveCfg = Release|x64
+		{8898EA18-743A-15EF-5DF5-284349369C3F}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {931FC716-65A2-41B2-B668-C913B39D4C0B}
 	EndGlobalSection
 EndGlobal
