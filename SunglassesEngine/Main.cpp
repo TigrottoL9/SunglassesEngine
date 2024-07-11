@@ -3,9 +3,9 @@
 
 int main(void)
 {
-	InitWindow(800, 450, "raylib [core] example - basic window");
+    InitWindow(800, 450, "raylib [core] example - basic window");
 
-    Camera3D camera{};
+    Camera3D camera;
     camera.position = Vector3{ 10.0f, 10.0f, 10.0f };
     camera.target = Vector3{ .0f, .0f, .0f };
     camera.up = Vector3{ .0f, 1.0f, .0f };
@@ -49,7 +49,7 @@ int main(void)
         EndDrawing();
     }
 
-	CloseWindow();
+    CloseWindow();
 
-	return 0;
+    return 0;
 }
