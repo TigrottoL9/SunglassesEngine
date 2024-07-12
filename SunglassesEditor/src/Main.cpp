@@ -1,9 +1,14 @@
-#include "raylib.h"
-#include "raymath.h"
+#include <raylib.h>
+#include <raymath.h>
+
+#include "Components/TransformComponent.h"
+#include <iostream>
 
 int main(void)
 {
     InitWindow(800, 450, "raylib [core] example - basic window");
+
+    TransformComponent t1;
 
     Camera3D camera;
     camera.position = Vector3{ 10.0f, 10.0f, 10.0f };
@@ -26,9 +31,6 @@ int main(void)
     blue.shader = basicShader;
     blue.maps[MATERIAL_MAP_DIFFUSE].color = BLUE;
 
-    Matrix transform1 = MatrixIdentity();
-    Matrix transform2 = MatrixTranslate(-5, 0, 4);
-
 
     while (!WindowShouldClose())
     {
@@ -40,8 +42,7 @@ int main(void)
         BeginMode3D(camera);
 
         //DrawCube(cubePosition, 5, 5, 8, RED);
-        DrawMesh(mesh, red, transform1);
-        DrawMesh(mesh, blue, transform2);
+        DrawMesh(mesh, red, t1.GetModelMatrix());
 
         EndMode3D();
 

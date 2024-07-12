@@ -148,12 +148,12 @@ project "SunglassesEditor"
 	
 	includedirs
 	{
-		--"SunglassesEngine/src"
+		"SunglassesEngine/src"
 	}
 	
 	links 
 	{
-		--"SunglassesEngine"
+		"SunglassesEngine"
 	}
 	
 	
