@@ -4,11 +4,12 @@
 #include "Components/TransformComponent.h"
 #include <iostream>
 
-#include "Behaviour.h"
+#include "Mybehaviour.h"
 
 
 int main(void)
 {
+    //SetTargetFPS(60);
     InitWindow(800, 450, "raylib [core] example - basic window");
 
     TransformComponent t1;
@@ -34,17 +35,14 @@ int main(void)
     blue.shader = basicShader;
     blue.maps[MATERIAL_MAP_DIFFUSE].color = BLUE;
 
-<<<<<<< HEAD
-    Matrix transform1 = MatrixIdentity();
-    Matrix transform2 = MatrixTranslate(-5, 0, 4);
-
-    // Behaviour test
-    Behaviour behaviour = Behaviour(0);
-=======
->>>>>>> 717b7c6ea9d86b794ee774b986e1709b8ddeeb08
+    Mybehaviour beha(t1);
+    
 
     while (!WindowShouldClose())
     {
+        beha.Update();
+        //std::cout << GetFPS() << std::endl;
+
         BeginDrawing();
 
         ClearBackground(VIOLET);

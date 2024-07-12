@@ -143,20 +143,16 @@
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
-<<<<<<< HEAD
-    <ClInclude Include="src\Behaviour.h" />
+    <ClInclude Include="src\Behaviours\Behaviour.h" />
+    <ClInclude Include="src\Components\IComponent.h" />
+    <ClInclude Include="src\Components\TransformComponent.h" />
     <ClInclude Include="src\Entity.h" />
     <ClInclude Include="src\IUpdetable.h" />
-=======
-    <ClInclude Include="src\Components\IComponent.h" />
-    <ClInclude Include="src\Entity.h" />
-    <ClInclude Include="src\Components\TransformComponent.h" />
->>>>>>> 717b7c6ea9d86b794ee774b986e1709b8ddeeb08
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\Behaviour.cpp" />
-    <ClCompile Include="src\Entity.cpp" />
+    <ClCompile Include="src\Behaviours\Behaviour.cpp" />
     <ClCompile Include="src\Components\TransformComponent.cpp" />
+    <ClCompile Include="src\Entity.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

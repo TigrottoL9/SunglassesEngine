@@ -6,6 +6,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\Behaviour.h" />
     <ClInclude Include="src\Components\IComponent.h">
       <Filter>Components</Filter>
     </ClInclude>
@@ -13,8 +14,10 @@
       <Filter>Components</Filter>
     </ClInclude>
     <ClInclude Include="src\Entity.h" />
+    <ClInclude Include="src\IUpdetable.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\Behaviour.cpp" />
     <ClCompile Include="src\Components\TransformComponent.cpp">
       <Filter>Components</Filter>
     </ClCompile>
