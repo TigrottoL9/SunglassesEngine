@@ -1,4 +1,5 @@
 #pragma once
+
 #include "IUpdetable.h"
 
 class Behaviour : public IUpdatable

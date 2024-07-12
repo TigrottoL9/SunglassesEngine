@@ -72,7 +72,7 @@ project "SunglassesEngine"
 	
 	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
 	objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
-
+	
 	files
 	{
 		"%{prj.name}/src/**.h",
@@ -96,7 +96,7 @@ project "SunglassesEngine"
 		
 		defines
 		{
-			
+			MAKE_LIB
 		}
 	
 	prebuildcommands
@@ -148,24 +148,18 @@ project "SunglassesEditor"
 	
 	includedirs
 	{
-		--"SunglassesEngine/src"
+		"SunglassesEngine/src"
 	}
 	
 	links 
 	{
-		--"SunglassesEngine"
+		"SunglassesEngine"
 	}
-	
-	
+
 	filter "system:windows"
 		cppdialect "c++20"
 		staticruntime "On"
 		systemversion "latest"
-		
-		defines
-		{
-			
-		}
 	
 	filter "configurations:Debug"
 		defines

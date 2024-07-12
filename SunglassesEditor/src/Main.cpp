@@ -1,6 +1,8 @@
 #include "raylib.h"
 #include "raymath.h"
 
+#include "Behaviour.h"
+
 
 int main(void)
 {
@@ -31,8 +33,7 @@ int main(void)
     Matrix transform2 = MatrixTranslate(-5, 0, 4);
 
     // Behaviour test
-    
-
+    Behaviour behaviour = Behaviour(0);
 
     while (!WindowShouldClose())
     {
