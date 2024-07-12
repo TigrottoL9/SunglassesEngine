@@ -20,6 +20,21 @@ function check_raylib()
     end
 end
 
+function check_vcpkg()
+    if(os.isdir("vcpkg") == false and os.isdir("vcpkg-master") == false) then
+        if(not os.isfile("vcpkg-master.zip")) then
+            print("vcpkg not found, downloading from github")
+            local result_str, response_code = http.download("https://github.com/microsoft/vcpkg/archive/refs/heads/master.zip", "vcpkg-master.zip", {
+                progress = download_progress,
+                headers = { "From: Premake", "Referer: Premake" }
+            })
+        end
+        print("Unzipping to " ..  os.getcwd())
+        zip.extract("vcpkg-master.zip", os.getcwd())
+        os.remove("vcpkg-master.zip")
+    end
+end
+
 workspace "SunglassesEngine"
 	architecture "x64"
 	
@@ -49,8 +64,6 @@ newoption
     },
     default = "opengl43"
 }
-
-project "raylib"
 
 project "SunglassesEngine"
 	location "SunglassesEngine"
@@ -85,7 +98,12 @@ project "SunglassesEngine"
 		{
 			
 		}
-		
+	
+	prebuildcommands
+	{
+		"{MKDIR} ../bin/" .. outputdir .. "/SunglassesEditor/%{cfg.buildtarget.name}"
+	}
+	
 	postbuildcommands
 	{
 		("{COPYFILE} %{cfg.buildtarget.relpath} ../bin/" .. outputdir .. "/SunglassesEditor/%{cfg.buildtarget.name}")
@@ -130,12 +148,12 @@ project "SunglassesEditor"
 	
 	includedirs
 	{
-		"SunglassesEngine/src"
+		--"SunglassesEngine/src"
 	}
 	
 	links 
 	{
-		"SunglassesEngine"
+		--"SunglassesEngine"
 	}
 	
 	
@@ -170,5 +188,11 @@ project "SunglassesEditor"
 		}
 		optimize "On"
 		
+-- download raylib
 check_raylib();
+
+-- download vcpkg
+check_vcpkg();
+
+
 include ("premake5-raylib.lua")

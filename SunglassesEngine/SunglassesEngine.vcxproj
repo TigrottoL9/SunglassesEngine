@@ -85,6 +85,9 @@
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
+    <PreBuildEvent>
+      <Command>IF NOT EXIST ..\bin\Debug-windows-x86_64\SunglassesEditor\$(TargetFileName) (mkdir ..\bin\Debug-windows-x86_64\SunglassesEditor\$(TargetFileName))</Command>
+    </PreBuildEvent>
     <PostBuildEvent>
       <Command>copy /B /Y ..\bin\Debug-windows-x86_64\SunglassesEngine\SunglassesEngine.lib ..\bin\Debug-windows-x86_64\SunglassesEditor\$(TargetFileName)</Command>
     </PostBuildEvent>
@@ -107,6 +110,9 @@
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
     </Link>
+    <PreBuildEvent>
+      <Command>IF NOT EXIST ..\bin\Release-windows-x86_64\SunglassesEditor\$(TargetFileName) (mkdir ..\bin\Release-windows-x86_64\SunglassesEditor\$(TargetFileName))</Command>
+    </PreBuildEvent>
     <PostBuildEvent>
       <Command>copy /B /Y ..\bin\Release-windows-x86_64\SunglassesEngine\SunglassesEngine.lib ..\bin\Release-windows-x86_64\SunglassesEditor\$(TargetFileName)</Command>
     </PostBuildEvent>
@@ -129,6 +135,9 @@
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
     </Link>
+    <PreBuildEvent>
+      <Command>IF NOT EXIST ..\bin\Dist-windows-x86_64\SunglassesEditor\$(TargetFileName) (mkdir ..\bin\Dist-windows-x86_64\SunglassesEditor\$(TargetFileName))</Command>
+    </PreBuildEvent>
     <PostBuildEvent>
       <Command>copy /B /Y ..\bin\Dist-windows-x86_64\SunglassesEngine\SunglassesEngine.lib ..\bin\Dist-windows-x86_64\SunglassesEditor\$(TargetFileName)</Command>
     </PostBuildEvent>

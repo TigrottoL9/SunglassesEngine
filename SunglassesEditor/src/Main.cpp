@@ -1,5 +1,3 @@
-#define GRAPHICS GRAPHICS_API_OPENGL_21
-
 #include "raylib.h"
 #include "raymath.h"
 
