@@ -143,9 +143,12 @@
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="src\Behaviour.h" />
     <ClInclude Include="src\Entity.h" />
+    <ClInclude Include="src\IUpdetable.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\Behaviour.cpp" />
     <ClCompile Include="src\Entity.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
