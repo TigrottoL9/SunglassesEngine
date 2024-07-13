@@ -6,14 +6,12 @@
 #include "Components/TransformComponent.h"
 
 #include "Mybehaviour.h"
+#include "MyEntity.h"
 
 
 int main(void)
 {
-    InitWindow(800, 450, "raylib [core] example - basic window");
-
-    TransformComponent t1;
-
+    InitWindow(1200, 800, "raylib [core] example - basic window");
     Camera3D camera;
     camera.position = Vector3{ 10.0f, 10.0f, 10.0f };
     camera.target = Vector3{ 0.0f, .0f, 0.0f };
@@ -24,33 +22,24 @@ int main(void)
 
     Vector3 cubePosition = Vector3{ 0.0f, 0.0f, 0.0f };
 
-    Mesh mesh = GenMeshCube(5, 5, 8);
-    Shader basicShader = LoadShader("./src/shaders/basic.vs", "./src/shaders/basic.fg");
-
-    Material red = LoadMaterialDefault();
-    red.shader = basicShader;
-    red.maps[MATERIAL_MAP_DIFFUSE].color = RED;
-
-    Material blue = LoadMaterialDefault();
-    blue.shader = basicShader;
-    blue.maps[MATERIAL_MAP_DIFFUSE].color = BLUE;
-
-    Mybehaviour beha(t1);
+    MyEntity cubeMoveEntity;
+    cubeMoveEntity.Initialize();
 
     while (!WindowShouldClose())
     {
-        beha.Update();
+        cubeMoveEntity.Update();
         //std::cout << GetFPS() << std::endl;
 
         BeginDrawing();
 
         ClearBackground(VIOLET);
-        //DrawText("Congrats! You created your first window!", 190, 200, 20, LIGHTGRAY);
+        std::string fpsCounter = "FPS: " + GetFPS();
+        
+        DrawFPS(10, 10);
 
         BeginMode3D(camera);
 
-        //DrawCube(cubePosition, 5, 5, 8, RED);
-        DrawMesh(mesh, red, t1.GetModelMatrix());
+        cubeMoveEntity.Draw();
 
         EndMode3D();
 

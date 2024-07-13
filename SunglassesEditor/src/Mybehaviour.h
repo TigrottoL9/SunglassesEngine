@@ -3,7 +3,7 @@
 #include "Behaviours/Behaviour.h"
 #include "Components/TransformComponent.h"
 
-class Mybehaviour : Behaviour
+class Mybehaviour : public Behaviour
 {
 public:
 	Mybehaviour(TransformComponent& component);

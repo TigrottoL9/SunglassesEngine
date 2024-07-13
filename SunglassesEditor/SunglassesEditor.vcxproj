@@ -131,6 +131,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\MyEntity.cpp" />
     <ClCompile Include="src\Mybehaviour.cpp" />
     <ClCompile Include="src\Main.cpp" />
   </ItemGroup>
@@ -140,6 +141,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\MyEntity.h" />
     <ClInclude Include="src\Mybehaviour.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

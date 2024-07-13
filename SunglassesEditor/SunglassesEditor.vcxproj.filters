@@ -3,8 +3,10 @@
   <ItemGroup>
     <ClCompile Include="src\Main.cpp" />
     <ClCompile Include="src\Mybehaviour.cpp" />
+    <ClCompile Include="src\MyEntity.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Mybehaviour.h" />
+    <ClInclude Include="src\MyEntity.h" />
   </ItemGroup>
 </Project>
