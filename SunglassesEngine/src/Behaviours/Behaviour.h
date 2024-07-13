@@ -10,6 +10,7 @@ class Behaviour : public IUpdatable
 public:
 	// Inherited via IUpdatable
 	virtual void Update() = 0;
+
 private:
 
 
