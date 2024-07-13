@@ -1,15 +1,15 @@
 #include <raylib.h>
 #include <raymath.h>
 
-#include "Components/TransformComponent.h"
 #include <iostream>
+
+#include "Components/TransformComponent.h"
 
 #include "Mybehaviour.h"
 
 
 int main(void)
 {
-    //SetTargetFPS(60);
     InitWindow(800, 450, "raylib [core] example - basic window");
 
     TransformComponent t1;
@@ -36,7 +36,6 @@ int main(void)
     blue.maps[MATERIAL_MAP_DIFFUSE].color = BLUE;
 
     Mybehaviour beha(t1);
-    
 
     while (!WindowShouldClose())
     {
