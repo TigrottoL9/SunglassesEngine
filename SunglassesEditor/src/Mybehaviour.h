@@ -7,9 +7,6 @@ class Mybehaviour : public Behaviour
 {
 public:
 	Mybehaviour(TransformComponent& component);
-	//Mybehaviour(std::vector<IComponent>& components) {};
-
-
 
 	// Inherited via Behaviour
 	void Update() override;

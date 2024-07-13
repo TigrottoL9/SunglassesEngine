@@ -48,12 +48,16 @@ Matrix TransformComponent::GetModelMatrix()
 	if (!m_isDirty)
 		return m_modelMatrix;
 
-	//Questo processo può essere semplificato, ma per chiarezza ho messo le tre matrici staccate
+	Vector3 translation = Position();
+	Vector3 scale = Scale();
+	Quaternion rotation = Rotation();
+
+	//Questo processo puo essere semplificato, ma per chiarezza ho messo le tre matrici staccate
 	//Nulla vieta di fare la moltiplicazione senza queste variabili
-	Matrix translation = MatrixTranslate(Position().x, Position().y, Position().z);
-	Matrix scale = MatrixScale(Scale().x, Scale().y, Scale().z);
-	Matrix rotation = QuaternionToMatrix(Rotation());
-	m_modelMatrix = MatrixMultiply(translation, MatrixMultiply(rotation, scale));
+	Matrix translationMatrix = MatrixTranslate(translation.x, translation.y, translation.z);
+	Matrix scaleMatrix = MatrixScale(scale.x, scale.y, scale.z);
+	Matrix rotationMatrix = QuaternionToMatrix(rotation);
+	m_modelMatrix = MatrixMultiply(translationMatrix, MatrixMultiply(rotationMatrix, scaleMatrix));
 
 	return m_modelMatrix;
 }
