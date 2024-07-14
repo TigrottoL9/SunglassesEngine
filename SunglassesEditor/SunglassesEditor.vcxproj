@@ -144,6 +144,10 @@
     <ClInclude Include="src\MyEntity.h" />
     <ClInclude Include="src\Mybehaviour.h" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\shaders\basic.fs" />
+    <None Include="resources\shaders\basic.vs" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

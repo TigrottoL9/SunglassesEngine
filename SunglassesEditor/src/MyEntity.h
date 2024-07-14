@@ -1,7 +1,8 @@
 #pragma once
 #include <Components/TransformComponent.h>
+#include <Entity.h>
 
-#include "Entity.h"
+#include "Mybehaviour.h"
 
 class MyEntity : public Entity
 {

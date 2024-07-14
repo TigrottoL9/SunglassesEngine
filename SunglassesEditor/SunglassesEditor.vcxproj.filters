@@ -9,4 +9,8 @@
     <ClInclude Include="src\Mybehaviour.h" />
     <ClInclude Include="src\MyEntity.h" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\shaders\basic.vs" />
+    <None Include="resources\shaders\basic.fs" />
+  </ItemGroup>
 </Project>

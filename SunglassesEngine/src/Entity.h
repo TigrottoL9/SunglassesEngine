@@ -4,7 +4,7 @@
 #include <memory>
 
 #include "Components/TransformComponent.h"
-#include "../../SunglassesEditor/src/Mybehaviour.h"
+#include "Behaviours/Behaviour.h"
 
 class Entity
 {
