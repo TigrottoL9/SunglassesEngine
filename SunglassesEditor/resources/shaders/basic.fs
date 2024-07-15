@@ -19,6 +19,7 @@ void main()
     //Info della scena, TODO: falle diventare uniform
     vec3 ligthDir = normalize(vec3(0, 1, 0.5));
     vec4 ambient = vec4(0.79, 0.94, 0.97, 1);
+
     vec3 normal = normalize(fragNormal);
 
     //Colore texture

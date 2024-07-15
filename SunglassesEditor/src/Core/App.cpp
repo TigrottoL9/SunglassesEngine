@@ -1,0 +1,101 @@
+#include "App.h"
+
+#include "../../vendor/rlImGui/imgui.h"
+#include "../../vendor/rlImGui/rlImGui.h"
+#include "../../vendor/rlImGui/extras/IconsKenney.h"
+
+App::App(std::string applicationName, int windowWidth, int windowHeigth) : m_currentScene(nullptr), m_isGameRunning(true)
+{
+	SetConfigFlags(FLAG_MSAA_4X_HINT | FLAG_WINDOW_RESIZABLE);
+	InitWindow(windowWidth, windowHeigth, applicationName.c_str());
+}
+
+void App::Initialize()
+{
+	//Setuppa l'interfaccia con font
+	rlImGuiSetup(true);
+	ImGuiIO& io = ImGui::GetIO();
+	io.ConfigFlags |= ImGuiConfigFlags_DockingEnable;
+
+	ImFont* font = io.Fonts->AddFontFromFileTTF("resources/editor-styles/Arvo-Regular.ttf", 20.0f,
+		nullptr, io.Fonts->GetGlyphRangesJapanese());
+	io.FontDefault = font;
+
+
+	static const ImWchar icons_ranges[] = { ICON_MIN_KI, ICON_MAX_KI, 0 };
+	ImFontConfig icons_config;
+	icons_config.MergeMode = true;
+	icons_config.PixelSnapH = true;
+	icons_config.GlyphMinAdvanceX = 15.0f;
+	io.Fonts->AddFontFromFileTTF("resources/editor-styles/kenney-icon-font.ttf", 15.0f, &icons_config, icons_ranges);
+
+	io.FontGlobalScale = 1.0f;
+	rlImGuiReloadFonts();
+}
+
+void App::Run()
+{
+	while (!WindowShouldClose())
+	{
+		BeginDrawing();
+
+		ClearBackground(VIOLET);
+
+		//Draw scene TODO: fallo diventare m_game->Run(); dove game sarà una classe del tipo => class MyGame: public Game
+		{
+			if (m_isGameRunning)
+			{
+				m_currentScene->Update();
+			}
+			m_currentScene->Draw();
+		}
+
+		//Draw Editor GUI
+		{
+			rlImGuiBegin();
+
+			ImGui::BeginMainMenuBar();
+			ImGui::Text("%s Sunglasses Engine ", ICON_KI_FIST_CIRCLE);
+
+			ImGui::SameLine(ImGui::GetWindowWidth()/2 - 10);
+			if (ImGui::Button(m_isGameRunning ? ICON_KI_CARET_RIGHT : ICON_KI_PAUSE))
+			{
+				m_isGameRunning = !m_isGameRunning;
+			}
+
+			ImGui::SameLine(ImGui::GetWindowWidth() - 120);
+			ImGui::Text(TextFormat("%i - %0.02fms", GetFPS(), GetFrameTime() * 1000));
+			ImGui::EndMainMenuBar();
+			ImGui::DockSpaceOverViewport(0, ImGui::GetMainViewport(), ImGuiDockNodeFlags_PassthruCentralNode);
+
+			/*
+			for (std::unique_ptr<Tool>& tool : editorTools) {
+				tool->DrawGUI();
+			}
+			*/
+
+			ImGui::ShowDemoWindow();
+
+			rlImGuiEnd();
+		}
+
+		EndDrawing();
+	}
+}
+
+void App::Shutdown()
+{
+	rlImGuiShutdown();
+	CloseWindow();
+}
+
+void App::SetScene(Scene* scene)
+{
+	if (m_currentScene != nullptr)
+	{
+		delete m_currentScene;
+	}
+
+	scene->Initialize();
+	m_currentScene = scene;
+}

@@ -12,7 +12,7 @@ Mybehaviour::Mybehaviour(TransformComponent& component)
 
 void Mybehaviour::Update()
 {
-	Vector3 translateAmount = Vector3{ 10.0f * GetFrameTime(), 0, 0 };
-	//m_transformComponent.Translate(translateAmount);
+	Vector3 translateAmount = Vector3{ 4.0f * GetFrameTime(), 0, 0 };
+	m_transformComponent.Translate(translateAmount);
 	//std::cout << GetFPS() << std::endl;
 }

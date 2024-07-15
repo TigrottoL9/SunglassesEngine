@@ -4,10 +4,36 @@
     <ClCompile Include="src\Main.cpp" />
     <ClCompile Include="src\Mybehaviour.cpp" />
     <ClCompile Include="src\MyEntity.cpp" />
+    <ClCompile Include="src\Core\Tool.cpp" />
+    <ClCompile Include="src\Core\Scene.cpp" />
+    <ClCompile Include="vendor\rlImGui\rlImGui.cpp" />
+    <ClCompile Include="vendor\rlImGui\imgui.cpp" />
+    <ClCompile Include="vendor\rlImGui\imgui_draw.cpp" />
+    <ClCompile Include="vendor\rlImGui\imgui_tables.cpp" />
+    <ClCompile Include="vendor\rlImGui\imgui_widgets.cpp" />
+    <ClCompile Include="vendor\rlImGui\imgui_demo.cpp" />
+    <ClCompile Include="src\Core\App.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Mybehaviour.h" />
     <ClInclude Include="src\MyEntity.h" />
+    <ClInclude Include="vendor\raygui.h" />
+    <ClInclude Include="src\Core\Tool.h" />
+    <ClInclude Include="src\Core\Scene.h" />
+    <ClInclude Include="vendor\rlImGui\imgui_impl_raylib.h" />
+    <ClInclude Include="vendor\rlImGui\rlImGui.h" />
+    <ClInclude Include="vendor\rlImGui\rlImGuiColors.h" />
+    <ClInclude Include="vendor\rlImGui\extras\FA6FreeSolidFontData.h" />
+    <ClInclude Include="vendor\rlImGui\extras\IconsFontAwesome6.h" />
+    <ClInclude Include="vendor\rlImGui\imgui.h" />
+    <ClInclude Include="vendor\rlImGui\imconfig.h" />
+    <ClInclude Include="vendor\rlImGui\imgui_internal.h" />
+    <ClInclude Include="vendor\rlImGui\imstb_rectpack.h" />
+    <ClInclude Include="vendor\rlImGui\imstb_textedit.h" />
+    <ClInclude Include="vendor\rlImGui\imstb_truetype.h" />
+    <ClInclude Include="vendor\rlImGui\backends\imgui_impl_opengl3_loader.h" />
+    <ClInclude Include="src\Core\App.h" />
+    <ClInclude Include="vendor\rlImGui\extras\IconsKenney.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="resources\shaders\basic.vs" />
