@@ -80,7 +80,7 @@ void App::Run()
 			}
 			*/
 
-			ImGui::ShowDemoWindow();
+			//ImGui::ShowDemoWindow();
 
 			rlImGuiEnd();
 		}
