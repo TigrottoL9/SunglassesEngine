@@ -175,3 +175,7 @@ bool rlImGuiImageButtonSize(const char* name, const Texture* image, struct ImVec
 #ifdef __cplusplus
 }
 #endif
+
+void SetStyleDark();
+
+void SetStylePurpleDark();

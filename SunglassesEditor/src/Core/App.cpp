@@ -31,6 +31,12 @@ void App::Initialize()
 
 	io.FontGlobalScale = 1.0f;
 	rlImGuiReloadFonts();
+
+	SetStylePurpleDark();
+	ImGuiStyle& style = ImGui::GetStyle();
+	style.FrameRounding = 3;
+	style.GrabRounding = 3;
+	style.GrabMinSize = 12;
 }
 
 void App::Run()
