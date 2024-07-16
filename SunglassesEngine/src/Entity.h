@@ -3,7 +3,6 @@
 #include <vector>
 #include <memory>
 
-#include "Components/TransformComponent.h"
 #include "Behaviours/Behaviour.h"
 
 class Entity
@@ -25,4 +24,3 @@ private:
 	std::vector<std::shared_ptr<Behaviour>> m_behaviours;
 
 };
-

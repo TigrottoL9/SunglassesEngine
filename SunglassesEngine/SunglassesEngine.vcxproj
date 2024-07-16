@@ -143,6 +143,7 @@
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="src\Components\CameraComponent.h" />
     <ClInclude Include="src\Behaviours\Behaviour.h" />
     <ClInclude Include="src\Components\IComponent.h" />
     <ClInclude Include="src\Components\TransformComponent.h" />
@@ -150,6 +151,7 @@
     <ClInclude Include="src\IUpdetable.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\Components\CameraComponent.cpp" />
     <ClCompile Include="src\Behaviours\Behaviour.cpp" />
     <ClCompile Include="src\Components\TransformComponent.cpp" />
     <ClCompile Include="src\Entity.cpp" />

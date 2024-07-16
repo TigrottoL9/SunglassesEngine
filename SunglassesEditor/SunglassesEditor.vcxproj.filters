@@ -13,6 +13,8 @@
     <ClCompile Include="vendor\rlImGui\imgui_widgets.cpp" />
     <ClCompile Include="vendor\rlImGui\imgui_demo.cpp" />
     <ClCompile Include="src\Core\App.cpp" />
+    <ClCompile Include="src\Core\SceneManager.cpp" />
+    <ClCompile Include="src\Entities\CameraOrbit.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Mybehaviour.h" />
@@ -34,6 +36,8 @@
     <ClInclude Include="vendor\rlImGui\backends\imgui_impl_opengl3_loader.h" />
     <ClInclude Include="src\Core\App.h" />
     <ClInclude Include="vendor\rlImGui\extras\IconsKenney.h" />
+    <ClInclude Include="src\Core\SceneManager.h" />
+    <ClInclude Include="src\Entities\CameraOrbit.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="resources\shaders\basic.vs" />

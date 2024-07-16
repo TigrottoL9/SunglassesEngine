@@ -131,6 +131,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\Entities\CameraOrbit.cpp" />
+    <ClCompile Include="src\Core\SceneManager.cpp" />
     <ClCompile Include="src\Core\App.cpp" />
     <ClCompile Include="src\Core\Scene.cpp" />
     <ClCompile Include="src\MyEntity.cpp" />
@@ -150,6 +152,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\Entities\CameraOrbit.h" />
+    <ClInclude Include="src\Core\SceneManager.h" />
     <ClInclude Include="src\Core\App.h" />
     <ClInclude Include="src\Core\Scene.h" />
     <ClInclude Include="src\MyEntity.h" />

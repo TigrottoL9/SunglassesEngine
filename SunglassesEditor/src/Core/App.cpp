@@ -1,10 +1,13 @@
 #include "App.h"
 
+//TODO: Fai header file per sto obrobrio
 #include "../../vendor/rlImGui/imgui.h"
 #include "../../vendor/rlImGui/rlImGui.h"
 #include "../../vendor/rlImGui/extras/IconsKenney.h"
 
-App::App(std::string applicationName, int windowWidth, int windowHeigth) : m_currentScene(nullptr), m_isGameRunning(true)
+#include "SceneManager.h"
+
+App::App(std::string applicationName, int windowWidth, int windowHeigth) : m_isGameRunning(true)
 {
 	SetConfigFlags(FLAG_MSAA_4X_HINT | FLAG_WINDOW_RESIZABLE);
 	InitWindow(windowWidth, windowHeigth, applicationName.c_str());
@@ -48,12 +51,14 @@ void App::Run()
 		ClearBackground(VIOLET);
 
 		//Draw scene TODO: fallo diventare m_game->Run(); dove game sarà una classe del tipo => class MyGame: public Game
+		
+		if(SceneManager::CurrentScene() !=  nullptr)
 		{
 			if (m_isGameRunning)
 			{
-				m_currentScene->Update();
+				SceneManager::CurrentScene()->Update();
 			}
-			m_currentScene->Draw();
+			SceneManager::CurrentScene()->Draw();
 		}
 
 		//Draw Editor GUI
@@ -93,15 +98,4 @@ void App::Shutdown()
 {
 	rlImGuiShutdown();
 	CloseWindow();
-}
-
-void App::SetScene(Scene* scene)
-{
-	if (m_currentScene != nullptr)
-	{
-		delete m_currentScene;
-	}
-
-	scene->Initialize();
-	m_currentScene = scene;
 }

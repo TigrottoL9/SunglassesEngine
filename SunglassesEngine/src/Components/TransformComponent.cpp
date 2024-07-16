@@ -33,7 +33,7 @@ void TransformComponent::Translate(Vector3 translationAmount)
 
 void TransformComponent::Rotate(Quaternion rotationAmount)
 {
-	m_transform.rotation = QuaternionAdd(m_transform.rotation, rotationAmount);
+	m_transform.rotation = QuaternionMultiply(m_transform.rotation, rotationAmount);
 	m_isDirty = true;
 }
 

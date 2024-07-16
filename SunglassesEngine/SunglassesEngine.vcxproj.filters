@@ -6,7 +6,6 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\Behaviour.h" />
     <ClInclude Include="src\Components\IComponent.h">
       <Filter>Components</Filter>
     </ClInclude>
@@ -15,12 +14,15 @@
     </ClInclude>
     <ClInclude Include="src\Entity.h" />
     <ClInclude Include="src\IUpdetable.h" />
+    <ClInclude Include="src\Behaviours\Behaviour.h" />
+    <ClInclude Include="src\Components\CameraComponent.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\Behaviour.cpp" />
     <ClCompile Include="src\Components\TransformComponent.cpp">
       <Filter>Components</Filter>
     </ClCompile>
     <ClCompile Include="src\Entity.cpp" />
+    <ClCompile Include="src\Behaviours\Behaviour.cpp" />
+    <ClCompile Include="src\Components\CameraComponent.cpp" />
   </ItemGroup>
 </Project>

@@ -2,10 +2,11 @@
 #include <raymath.h>
 
 #include "Core/App.h"
+#include "Core/SceneManager.h"
 
+#include "Entities/CameraOrbit.h"
 #include "Mybehaviour.h"
 #include "MyEntity.h"
-#include "Core/Scene.h"
 
 int main(void)
 {
@@ -14,10 +15,10 @@ int main(void)
 
     sunglassesEditor->Initialize();
 
-    Scene* mainScene = new Scene();
-    mainScene->Add(std::make_shared<MyEntity>());
-
-    sunglassesEditor->SetScene(mainScene);
+    ScenePtr mainScene = CreateScene();
+    mainScene->Add(std::make_shared<MyEntity>());    //TODO: questa cosa se la deve implementare la scena propria, tipo MyScene
+    mainScene->Add(std::make_shared<CameraOrbit>());    //TODO: questa cosa se la deve implementare la scena propria, tipo MyScene
+    SceneManager::GoToScene(mainScene);
 
     sunglassesEditor->Run();
     sunglassesEditor->Shutdown();

@@ -1,8 +1,9 @@
 #include "MyEntity.h"
+#include "Core/SceneManager.h"
 
 void MyEntity::Initialize()
 {
-	Add(std::make_shared<Mybehaviour>(m_transform));
+	//Add(std::make_shared<Mybehaviour>(m_transform));
 
 	m_cubeMesh = GenMeshCube(5, 5, 8);
 
@@ -13,7 +14,6 @@ void MyEntity::Initialize()
 	m_cubeMaterial.shader = LoadShader("resources/shaders/basic.vs", "resources/shaders/basic.fs");
 	m_cubeMaterial.maps[MATERIAL_MAP_DIFFUSE].color = RED;
 }
-
 
 void MyEntity::Draw()
 {
