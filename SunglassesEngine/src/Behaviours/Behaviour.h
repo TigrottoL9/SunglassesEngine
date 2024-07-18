@@ -2,8 +2,7 @@
 #include <vector>
 #include <memory>
 
-#include "../IUpdetable.h"
-#include "../Components/IComponent.h"
+#include "../Core/IUpdetable.h"
 
 class Behaviour : public IUpdatable
 {

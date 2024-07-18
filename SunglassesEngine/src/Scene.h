@@ -1,6 +1,6 @@
 #pragma once
 #include <vector>
-#include <Entity.h>
+#include "Core/Entity.h"
 
 #define CreateScene() std::make_shared<Scene>()
 
@@ -15,9 +15,10 @@ public:
 	
 	void Update();
 	void Draw();
-	void Add(std::shared_ptr<Entity> entity);
+	void Add(const std::shared_ptr<Entity>& entity);
 
-	void SetMainCamera(std::shared_ptr<Camera3D> camera);
+	void SetMainCamera(const std::shared_ptr<Camera>& camera);
+	const std::vector<std::shared_ptr<Entity>>& GetEntities() const;
 private:
 	std::shared_ptr<Camera3D> m_mainCamera;
 

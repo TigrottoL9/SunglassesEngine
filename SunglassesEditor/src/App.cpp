@@ -1,16 +1,18 @@
 #include "App.h"
 
 //TODO: Fai header file per sto obrobrio
-#include "../../vendor/rlImGui/imgui.h"
-#include "../../vendor/rlImGui/rlImGui.h"
-#include "../../vendor/rlImGui/extras/IconsKenney.h"
+#include "../vendor/rlImGui/imgui.h"
+#include "../vendor/rlImGui/rlImGui.h"
+#include "../vendor/rlImGui/extras/IconsKenney.h"
 
-#include "SceneManager.h"
+#include <Core/SceneManager.h>
 
-App::App(std::string applicationName, int windowWidth, int windowHeigth) : m_isGameRunning(true)
+App::App(const std::string& applicationName, int windowWidth, int windowHeigth) : m_isGameRunning(true)
 {
 	SetConfigFlags(FLAG_MSAA_4X_HINT | FLAG_WINDOW_RESIZABLE);
 	InitWindow(windowWidth, windowHeigth, applicationName.c_str());
+
+	SetExitKey(KEY_NULL);
 }
 
 void App::Initialize()
@@ -25,7 +27,7 @@ void App::Initialize()
 	io.FontDefault = font;
 
 
-	static const ImWchar icons_ranges[] = { ICON_MIN_KI, ICON_MAX_KI, 0 };
+	static constexpr ImWchar icons_ranges[] = { ICON_MIN_KI, ICON_MAX_KI, 0 };
 	ImFontConfig icons_config;
 	icons_config.MergeMode = true;
 	icons_config.PixelSnapH = true;
@@ -60,11 +62,11 @@ void App::Run()
 			}
 			SceneManager::CurrentScene()->Draw();
 		}
-
+		
 		//Draw Editor GUI
 		{
 			rlImGuiBegin();
-
+			
 			ImGui::BeginMainMenuBar();
 			ImGui::Text("%s Sunglasses Engine ", ICON_KI_FIST_CIRCLE);
 

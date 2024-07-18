@@ -17,12 +17,21 @@ class TransformComponent : public IComponent
 		void Translate(Vector3 position);
 		void Rotate(Quaternion rotation);
 		void Scale(Vector3 scale);
+		void LookAt(Vector3 point);
+
+		Vector3 TransformVector(const Vector3& v) const;
+
+		//void LookAt(Vector3 point);
 
 		Matrix GetModelMatrix();
 
-		const Vector3& Position();
-		const Quaternion& Rotation();
-		const Vector3& Scale();
+		const Vector3& Position() const;
+		const Quaternion& Rotation() const;
+		const Vector3& Scale() const;
+
+		const Vector3& Up() const;
+		const Vector3& Forward() const;
+		const Vector3& Rigth() const;
 
 	private:
 		Transform m_transform;

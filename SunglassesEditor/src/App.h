@@ -7,7 +7,7 @@
 class App
 {
 public:
-	App(std::string applicationName, int windowWidth, int windowHeigth);
+	App(const std::string& applicationName, int windowWidth, int windowHeigth);
 
 	void Initialize();
 	void Run();

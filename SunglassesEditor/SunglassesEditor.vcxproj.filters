@@ -2,26 +2,24 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <ClCompile Include="src\Main.cpp" />
-    <ClCompile Include="src\Mybehaviour.cpp" />
-    <ClCompile Include="src\MyEntity.cpp" />
-    <ClCompile Include="src\Core\Tool.cpp" />
-    <ClCompile Include="src\Core\Scene.cpp" />
+    <ClCompile Include="src\Behaviours\Mybehaviour.cpp" />
+    <ClCompile Include="src\Entities\MyEntity.cpp" />
     <ClCompile Include="vendor\rlImGui\rlImGui.cpp" />
     <ClCompile Include="vendor\rlImGui\imgui.cpp" />
     <ClCompile Include="vendor\rlImGui\imgui_draw.cpp" />
     <ClCompile Include="vendor\rlImGui\imgui_tables.cpp" />
     <ClCompile Include="vendor\rlImGui\imgui_widgets.cpp" />
     <ClCompile Include="vendor\rlImGui\imgui_demo.cpp" />
-    <ClCompile Include="src\Core\App.cpp" />
-    <ClCompile Include="src\Core\SceneManager.cpp" />
     <ClCompile Include="src\Entities\CameraOrbit.cpp" />
+    <ClCompile Include="src\App.cpp" />
+    <ClCompile Include="src\Entities\Player.cpp" />
+    <ClCompile Include="src\Behaviours\FPSCamera.cpp" />
+    <ClCompile Include="src\Behaviours\Move.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\Mybehaviour.h" />
-    <ClInclude Include="src\MyEntity.h" />
+    <ClInclude Include="src\Behaviours\Mybehaviour.h" />
+    <ClInclude Include="src\Entities\MyEntity.h" />
     <ClInclude Include="vendor\raygui.h" />
-    <ClInclude Include="src\Core\Tool.h" />
-    <ClInclude Include="src\Core\Scene.h" />
     <ClInclude Include="vendor\rlImGui\imgui_impl_raylib.h" />
     <ClInclude Include="vendor\rlImGui\rlImGui.h" />
     <ClInclude Include="vendor\rlImGui\rlImGuiColors.h" />
@@ -34,13 +32,15 @@
     <ClInclude Include="vendor\rlImGui\imstb_textedit.h" />
     <ClInclude Include="vendor\rlImGui\imstb_truetype.h" />
     <ClInclude Include="vendor\rlImGui\backends\imgui_impl_opengl3_loader.h" />
-    <ClInclude Include="src\Core\App.h" />
     <ClInclude Include="vendor\rlImGui\extras\IconsKenney.h" />
-    <ClInclude Include="src\Core\SceneManager.h" />
     <ClInclude Include="src\Entities\CameraOrbit.h" />
+    <ClInclude Include="src\App.h" />
+    <ClInclude Include="src\Entities\Player.h" />
+    <ClInclude Include="src\Behaviours\FPSCamera.h" />
+    <ClInclude Include="src\Behaviours\Move.h" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="resources\shaders\basic.vs" />
     <None Include="resources\shaders\basic.fs" />
+    <None Include="resources\shaders\basic.vs" />
   </ItemGroup>
 </Project>

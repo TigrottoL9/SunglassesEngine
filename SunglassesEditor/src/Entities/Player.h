@@ -1,9 +1,10 @@
-#pragma once
+﻿#pragma once
 #include <Core/Entity.h>
-#include <Components/TransformComponent.h>
-#include <Components/CameraComponent.h>
 
-class CameraOrbit : public Entity
+#include <Components/CameraComponent.h>
+#include "Components/TransformComponent.h"
+
+class Player : public Entity
 {
 private:
 	TransformComponent m_transform;
@@ -12,5 +13,5 @@ private:
 public:
 	void Initialize() override;
 	void Update() override;
+	
 };
-

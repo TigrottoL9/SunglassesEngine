@@ -3,6 +3,9 @@
 #include <raymath.h>
 #include <memory>
 
+#include "IComponent.h"
+#include "TransformComponent.h"
+
 /*
 typedef struct Camera3D {
     Vector3 position;       // Camera position
@@ -13,27 +16,21 @@ typedef struct Camera3D {
 } Camera3D;
 */
 
-class CameraComponent
+class CameraComponent: public TransformComponent
 {
 public:
 	CameraComponent();
 
-    void SetPosition(Vector3 position);
-    void SetTarget(Vector3 target);
-    void SetFov(float fov);
-    void SetType(CameraProjection projectionType);
+    void SetFov(float fov) const;
+    void SetType(CameraProjection projectionType) const;
 
-    Vector3& Position() const;
-    Vector3& Target() const;
-    Vector3 Forward() const;
-    Vector3& Up() const;
-    Vector3 Rigth() const;
+	[[nodiscard]] Vector3 Target() const;
+
+    void UpdateCamera() const;
 
     std::shared_ptr<Camera3D> GetCamera();
 
 private:
 	std::shared_ptr<Camera3D> m_camera;
-    
-    Vector3 m_right; //Sfortunatamente Camera3d non ha right
 };
 

@@ -13,7 +13,7 @@ void Entity::Update()
 	}
 }
 
-void Entity::Add(std::shared_ptr<Behaviour> behaviour)
+void Entity::Add(const std::shared_ptr<Behaviour>& behaviour)
 {
 	m_behaviours.push_back(behaviour);
 }

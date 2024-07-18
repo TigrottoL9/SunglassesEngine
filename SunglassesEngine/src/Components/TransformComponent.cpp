@@ -1,4 +1,5 @@
 #include "TransformComponent.h"
+#include <cmath>
 
 TransformComponent::TransformComponent() : m_isDirty(true), m_transform(), m_modelMatrix(MatrixIdentity())
 {
@@ -43,6 +44,35 @@ void TransformComponent::Scale(Vector3 scalingAmount)
 	m_isDirty = true;
 }
 
+
+void TransformComponent::LookAt(Vector3 point)
+{
+
+	Vector3 dir = Vector3Normalize(Vector3Subtract(point, Position()));
+	float dot = Vector3DotProduct(Vector3{ 0, 0, 1 }, dir);
+
+	float rotAngle = std::acos(dot);
+	Vector3 rotAxis = Vector3CrossProduct(Vector3{ 0, 0, 1 }, dir);
+	rotAxis = Vector3Normalize(rotAxis);
+
+	if(Vector3LengthSqr(rotAxis) == 0)
+	{
+		rotAxis = Up();
+	}
+	
+	SetRotation(QuaternionFromAxisAngle(rotAxis, rotAngle));
+}
+
+Vector3 TransformComponent::TransformVector(const Vector3& v) const
+{
+	Vector3 result = Vector3Scale(Rigth(), v.x);
+	result = Vector3Add(result, Vector3Scale(Forward(), v.z));
+	result = Vector3Add(result, Vector3Scale(Up(), v.y));
+
+	return result;
+}
+
+
 Matrix TransformComponent::GetModelMatrix()
 {
 	if (!m_isDirty)
@@ -62,17 +92,32 @@ Matrix TransformComponent::GetModelMatrix()
 	return m_modelMatrix;
 }
 
-const Vector3& TransformComponent::Position()
+const Vector3& TransformComponent::Position() const
 {
 	return m_transform.translation;
 }
 
-const Quaternion& TransformComponent::Rotation()
+const Quaternion& TransformComponent::Rotation() const
 {
 	return m_transform.rotation;
 }
 
-const Vector3& TransformComponent::Scale()
+const Vector3& TransformComponent::Scale() const
 {
 	return m_transform.scale;
+}
+
+const Vector3& TransformComponent::Up() const
+{
+	return Vector3RotateByQuaternion(Vector3 {0, 1, 0}, m_transform.rotation);
+}
+
+const Vector3& TransformComponent::Forward() const
+{
+	return Vector3RotateByQuaternion(Vector3{ 0, 0, -1 }, m_transform.rotation);
+}
+
+const Vector3& TransformComponent::Rigth() const
+{
+	return Vector3RotateByQuaternion(Vector3{ 1, 0, 0 }, m_transform.rotation);
 }

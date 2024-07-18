@@ -1,6 +1,6 @@
 #pragma once
 #include <memory>
-#include "Scene.h"
+#include "../Scene.h"
 
 class SceneManager
 {
@@ -14,13 +14,13 @@ public:
 		return instance;
 	}
 
-	static void GoToScene(ScenePtr newScene);
+	static void GoToScene(const ScenePtr& newScene);
 	static ScenePtr& CurrentScene();
 
 private:
-	SceneManager() {};
+	SceneManager() = default;
 
-	void SetCurrentScene(ScenePtr newScene);
+	void SetCurrentScene(const ScenePtr& newScene);
 
 private:
 	ScenePtr m_currentScene;

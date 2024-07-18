@@ -131,14 +131,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\Behaviours\Move.cpp" />
+    <ClCompile Include="src\App.cpp" />
+    <ClCompile Include="src\Behaviours\FPSCamera.cpp" />
     <ClCompile Include="src\Entities\CameraOrbit.cpp" />
-    <ClCompile Include="src\Core\SceneManager.cpp" />
-    <ClCompile Include="src\Core\App.cpp" />
-    <ClCompile Include="src\Core\Scene.cpp" />
-    <ClCompile Include="src\MyEntity.cpp" />
-    <ClCompile Include="src\Mybehaviour.cpp" />
+    <ClCompile Include="src\Entities\MyEntity.cpp" />
+    <ClCompile Include="src\Behaviours\Mybehaviour.cpp" />
+    <ClCompile Include="src\Entities\Player.cpp" />
     <ClCompile Include="src\Main.cpp" />
-    <ClCompile Include="src\Core\Tool.cpp" />
     <ClCompile Include="vendor\rlImGui\imgui.cpp" />
     <ClCompile Include="vendor\rlImGui\imgui_demo.cpp" />
     <ClCompile Include="vendor\rlImGui\imgui_draw.cpp" />
@@ -152,13 +152,13 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\Behaviours\Move.h" />
+    <ClInclude Include="src\App.h" />
+    <ClInclude Include="src\Behaviours\FPSCamera.h" />
     <ClInclude Include="src\Entities\CameraOrbit.h" />
-    <ClInclude Include="src\Core\SceneManager.h" />
-    <ClInclude Include="src\Core\App.h" />
-    <ClInclude Include="src\Core\Scene.h" />
-    <ClInclude Include="src\MyEntity.h" />
-    <ClInclude Include="src\Mybehaviour.h" />
-    <ClInclude Include="src\Core\Tool.h" />
+    <ClInclude Include="src\Entities\MyEntity.h" />
+    <ClInclude Include="src\Behaviours\Mybehaviour.h" />
+    <ClInclude Include="src\Entities\Player.h" />
     <ClInclude Include="vendor\raygui.h" />
     <ClInclude Include="vendor\rlImGui\backends\imgui_impl_opengl3_loader.h" />
     <ClInclude Include="vendor\rlImGui\extras\FA6FreeSolidFontData.h" />
